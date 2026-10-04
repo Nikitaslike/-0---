@@ -43,6 +43,7 @@ def task4():
     while count < 10:
         turtle.pendown()
 
+
         turtle.forward(size)
         turtle.left(90)
         turtle.forward(size)
@@ -50,16 +51,18 @@ def task4():
         turtle.forward(size)
         turtle.left(90)
         turtle.forward(size)
+        turtle.left(90) 
 
         turtle.penup()
 
-        turtle.forward(10)
-        turtle.left(90)
-        turtle.forward(10)
+        turtle.backward(10)
         turtle.right(90)
-
-        size -= 20
+        turtle.forward(10)
+        turtle.left(90) 
+        size += 20  
         count += 1
+
+    turtle.done()
 
     turtle.done() 
     
@@ -126,7 +129,9 @@ while True:
             print("Correct number or vanish!!! 𐐘 🤝ඞ")
             
     except turtle.Terminator:
-        print("You have closed the turtle window. ")
-         # знайшов з гпт щоб можна було запустити натсупну черепашку після закриття попередньої, бо інакше програма падає з помилкою.
+        # знайшов з гпт щоб можна було запустити натсупну черепашку після закриття попередньої, бо інакше програма падає з помилкою.
         import turtle
+        turtle.speed(1)
+        turtle.shape('turtle')
+
         turtle.TurtleScreen._RUNNING = True
