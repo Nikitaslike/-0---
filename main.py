@@ -14,7 +14,7 @@ def task1():
     turtle.right(90)
     turtle.forward(50)
     
-    turtle.done()
+    turtle.exitonclick()
 
 def task2():
     turtle.forward(100)
@@ -61,9 +61,7 @@ def task4():
         size -= 20
         count += 1
 
-
-    turtle.done()
-    
+    turtle.done() 
     
 def task5():
     n = 12
@@ -75,6 +73,8 @@ def task5():
         turtle.stamp()
         turtle.backward(100)
         count += 1
+        
+    turtle.done() 
     
 def task6():
     size = 0
@@ -97,24 +97,36 @@ def task7():
         turtle.left(90) 
         size += 5        
         count += 1 
-    
-    
-print("Оберіть яку черепашку запустити: ")
-choose = int(input())
+        
+    turtle.done() 
 
-if choose == 1:
-    task1()
-elif choose == 2:
-    task2()
-elif choose == 3:
-    task3()
-elif choose == 4:
-    task4()
-elif choose == 5:
-    task5()
-elif choose == 6:
-    task6()
-elif choose == 7:
-    task7()
-else:
-    print("Correct number or vanish!!! 𐐘 🤝ඞ")
+while True:
+    
+    print("Оберіть яку черепашку запустити: ")
+    choose = int(input())
+
+    try: 
+        if choose == 1:
+            task1()
+        elif choose == 2:
+            task2()
+        elif choose == 3:
+            task3()
+        elif choose == 4:
+            task4()
+        elif choose == 5:
+            task5()
+        elif choose == 6:
+            task6()
+        elif choose == 7:
+            task7()
+        elif choose == 0:
+            break
+        else:
+            print("Correct number or vanish!!! 𐐘 🤝ඞ")
+            
+    except turtle.Terminator:
+        print("You have closed the turtle window. ")
+         # знайшов з гпт щоб можна було запустити натсупну черепашку після закриття попередньої, бо інакше програма падає з помилкою.
+        import turtle
+        turtle.TurtleScreen._RUNNING = True
